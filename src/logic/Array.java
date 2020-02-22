@@ -7,10 +7,13 @@ public class Array {
     private int length;
     private String message;
 
+//init of Array
     public  Array(int[] data){
         this.data = data;
         this.length = length;
     }
+
+//enter String param
     public static String enterParam (String message) {
 
         System.out.print(message);

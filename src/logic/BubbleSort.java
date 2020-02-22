@@ -13,34 +13,39 @@ public class BubbleSort {
         //create array
 
         Scanner s = new Scanner(System.in);
-        out.println("Please, enter number of elements of the logic.Array: ");
+        out.println("Please, enter number of elements of the Array: ");
         int n = s.nextInt();
-        int array [] =new int[n];
+        int array[] = new int[n];
 
-        out.println("Please, enter elements of the logic.Array. Please, enter repeated elements: ");
+        out.println("Please, enter elements of the Array: ");
 
-        for (int i=0;i<n;i++)
-        {array[i]=s.nextInt();}
+        for (int i = 0; i < n; i++) {
+            array[i] = s.nextInt();
+        }
 
-        data = new Array (array);
+        data = new Array(array);
 
-        out.println("Your input logic.Array is:" +Arrays.toString(Array.getData()));
+        out.println("Your input logic.Array is:" + Arrays.toString(Array.getData()));
 
 //Initialize the method for User
-            String param;
-            param = Array.enterParam("Please, enter sort parameter: U for upward, D for downward: ");
+        String param;
 
-                switch (param) {
-                    case "U":
-                        System.out.println("Your sorting logic.Array is: " + Arrays.toString(upSearch()));
-                        break;
+        param = Array.enterParam("Please, enter sort parameter: U for upward, D for downward: ");
 
-                    case "D":
-                        System.out.println("Your sorting logic.Array is:" + Arrays.toString(downSearch()));
-                        break;
-                    default: System.out.println("You wrote wrong parameter. Please, try again later.");
-                        break;
-                }
+        while (!param.equals("U") & !param.equals("D")) {
+                param = Array.enterParam("Please, re-enter. U for upward, D for downward: ");};
+
+        switch (param) {
+                case "U":
+                    out.println("Your upward sorting Array is: " + Arrays.toString(upSearch()));
+                    break;
+                case "D":
+                    out.println("Your downward sorting Array is:" + Arrays.toString(downSearch()));
+                    break;
+                default:
+                    out.println("You wrote wrong parameter. Please, try again later.");
+                    break;
+            }
     }
 
 //upward sorting - arrUS
